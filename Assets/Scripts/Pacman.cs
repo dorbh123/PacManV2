@@ -42,11 +42,11 @@ public class Pacman : MonoBehaviour
 
     public void ResetState()
     {
-        enabled = true;
-        spriteRenderer.enabled = true;
-        collider.enabled = true;
-        deathSequence.enabled = false;
-        deathSequence.spriteRenderer.enabled = false;
+        //enabled = true;
+        //spriteRenderer.enabled = true;
+        //collider.enabled = true;
+        //deathSequence.enabled = false;
+        //deathSequence.spriteRenderer.enabled = false;
         movement.ResetState();
         gameObject.SetActive(true);
     }
