@@ -20,7 +20,7 @@ public class Node : MonoBehaviour
         RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.5f, 0f, direction, 1f, obstacleLayer);
 
        
-        if (hit.collider == null) // mean direction is available to go to so its add
+        if (hit.collider == null) // mean direction is available to go to so its add to list
         {
             availableDirections.Add(direction);
         }
