@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 336218341434728906}
   - component: {fileID: 1207562330850481000}
   - component: {fileID: 5877627614544230508}
-  - component: {fileID: 1245184244643360308}
   - component: {fileID: 3136916890696879118}
   m_Layer: 7
   m_Name: Ghost_Base
@@ -126,6 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0
+  inside: {fileID: 0}
+  outside: {fileID: 0}
 --- !u!114 &5877627614544230508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,19 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 7
---- !u!114 &1245184244643360308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336218341434728944}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97f3f8b066ac4c74893e58491cc12ebc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 20
 --- !u!114 &3136916890696879118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 8
+  body: {fileID: 7951127681154292167}
+  eyes: {fileID: 121676878830068892}
+  blue: {fileID: 20903570839224825}
+  white: {fileID: 7515883291013201235}
 --- !u!1 &357953606702094977
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2780785044421224021}
   - component: {fileID: 121676878830068892}
+  - component: {fileID: 8175460654935630317}
   m_Layer: 7
   m_Name: Eyes
   m_TagString: Untagged
@@ -249,6 +242,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8175460654935630317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357953606702094977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e0b67259a3ebe4b96c9a5c72abddd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  up: {fileID: 21300000, guid: 7391304e6dcdc594484288107bfd217f, type: 3}
+  down: {fileID: 21300000, guid: b97167c35748db84fb4d32f4f242922a, type: 3}
+  left: {fileID: 21300000, guid: d65aa956b7569874fab274083826a77f, type: 3}
+  right: {fileID: 21300000, guid: 07ddb51374d9f19458dad756bbbcd880, type: 3}
 --- !u!1 &4749023548549705282
 GameObject:
   m_ObjectHideFlags: 0

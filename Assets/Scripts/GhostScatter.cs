@@ -6,8 +6,17 @@ public class GhostScatter : GhostBehavior
 {
     private void OnDisable()
     {
-        this.ghost.chase.Enable();
+        if (this.ghost.pinkyChase != null)
+        {
+            this.ghost.pinkyChase.Enable();
+        }
+        else if (this.ghost.chase != null)
+        {
+            this.ghost.chase.Enable();
+        }
     }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Node node = collision.GetComponent<Node>();
