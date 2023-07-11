@@ -1,31 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GhostPinkyChase : GhostBehavior
 {
+   
     private void OnDisable()
     {
-        if (this.ghost.pinkyChase != null)
+        if (ghost != null && ghost.scatter != null)
         {
-            this.ghost.pinkyChase.Disable();
+            ghost.scatter.SetNextBehavior();
+            ghost.scatter.Enable();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Node node = collision.GetComponent<Node>();
-        if (node != null && this.enabled && !this.ghost.frightened.enabled) // Check if the ghost is in the right behavior
+        if (node != null && enabled && ghost != null && !ghost.frightened.enabled)
         {
             Vector2 direction = Vector2.zero;
             float minDistance = float.MaxValue;
 
-            // Calculate the target position for Pinky
-            Vector3 targetPosition = this.ghost.target.position + (this.ghost.target.right * 4f);
+            Vector3 targetPosition = CalculateTargetPosition();
 
-            foreach (Vector2 availableDirection in node.availableDirections) // Find the available direction that moves closest to the target
+            foreach (Vector2 availableDirection in node.availableDirections)
             {
-                Vector3 newPosition = transform.position + new Vector3(availableDirection.x, availableDirection.y, 0);
+                Vector3 newPosition = ghost.transform.position + new Vector3(availableDirection.x, availableDirection.y, 0);
                 float distance = (targetPosition - newPosition).sqrMagnitude;
 
                 if (distance < minDistance)
@@ -35,7 +34,16 @@ public class GhostPinkyChase : GhostBehavior
                 }
             }
 
-            this.ghost.movement.SetDirection(direction);
+            ghost.movement.SetDirection(direction);
         }
     }
+
+    private Vector3 CalculateTargetPosition()
+    {
+        Vector3 pacmanPosition = ghost.target.position;
+        Vector3 direction = pacmanPosition - ghost.transform.position;
+        return pacmanPosition + (2 * direction);
+    }
+
+   
 }

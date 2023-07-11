@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class GhostChase : GhostBehavior
 {
+    //public override void SetTarget(Transform target)
+    //{
+    //    base.SetTarget(target);
+
+    //    // Implement additional target-specific logic for each ghost behavior
+    //    // For example, in GhostChase:
+    //    // this.ghost.movement.SetTarget(target);
+    //}
+    public override void SetNextBehavior()
+    {
+        // Set the next behavior to transition to after chase behavior
+        if (ghost.scatter != null)
+        {
+            nextBehavior = ghost.scatter;
+        }
+    }
     private void OnDisable()
     {
         ghost.scatter.Enable();

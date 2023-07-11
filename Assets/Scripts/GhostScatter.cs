@@ -1,29 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GhostScatter : GhostBehavior
 {
-    private void OnDisable()
+    public GhostBehavior chaseBehavior1; // Reference to the first chase behavior for this specific ghost
+    public GhostBehavior chaseBehavior2; // Reference to the second chase behavior for this specific ghost
+    public GhostBehavior chaseBehavior3; // Reference to the third chase behavior for this specific ghost
+
+    public override void SetNextBehavior()
     {
-        if (this.ghost.pinkyChase != null)
-        {
-            this.ghost.pinkyChase.Enable();
-        }
-        else if (this.ghost.chase != null)
-        {
-            this.ghost.chase.Enable();
-        }
+        // Transition to the appropriate chase behavior based on the specific ghost
+        if (ghost == null)
+            return;
+
+        if (ghost.chase != null)
+            nextBehavior = ghost.chase;
+        else if (ghost.pinkyChase != null)
+            nextBehavior = ghost.pinkyChase;
+        else if (ghost.inkyChase != null)
+            nextBehavior = ghost.inkyChase;
     }
 
+
+
+    private void OnDisable()
+    {
+        if (ghost != null && ghost.scatter != null)
+        {
+            ghost.scatter.SetNextBehavior();
+            ghost.scatter.Enable();
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Node node = collision.GetComponent<Node>();
-        if (node != null && this.enabled && !this.ghost.frightened.enabled) //chk if the ghost is in the right behavior 
+        if (node != null && enabled && ghost != null && !ghost.frightened.enabled)
         {
             int index = Random.Range(0, node.availableDirections.Count);
-            if (node.availableDirections[index] == -this.ghost.movement.direction && node.availableDirections.Count > 1) // dont go the same way you come from its look stuidp
+            if (node.availableDirections[index] == -ghost.movement.direction && node.availableDirections.Count > 1)
             {
                 index++;
                 if (index >= node.availableDirections.Count)
@@ -31,7 +45,7 @@ public class GhostScatter : GhostBehavior
                     index = 0;
                 }
             }
-            this.ghost.movement.SetDirection(node.availableDirections[index]);
+            ghost.movement.SetDirection(node.availableDirections[index]);
         }
     }
 }

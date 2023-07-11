@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ghost : MonoBehaviour
@@ -10,46 +8,76 @@ public class Ghost : MonoBehaviour
     public GhostChase chase { get; private set; }
     public GhostFrightened frightened { get; private set; }
     public GhostPinkyChase pinkyChase { get; private set; }
+    public GhostInkyChase inkyChase { get; private set; }
 
     public GhostBehavior initialBehavior;
+    public GameManager gameManager; // Reference to the GameManager script
 
     public Transform target;
 
     public int points = 200;
+
     private void Awake()
     {
-        this.movement = GetComponent<Movement>();
-        this.home = GetComponent<GhostHome>();
-        this.scatter = GetComponent<GhostScatter>();
-        this.chase = GetComponent<GhostChase>();
-        this.pinkyChase = GetComponent<GhostPinkyChase>();
-        this.frightened = GetComponent<GhostFrightened>();
+        movement = GetComponent<Movement>();
+        home = GetComponent<GhostHome>();
+        scatter = GetComponent<GhostScatter>();
+        chase = GetComponent<GhostChase>();
+        frightened = GetComponent<GhostFrightened>();
+        pinkyChase = GetComponent<GhostPinkyChase>();
+        inkyChase = GetComponent<GhostInkyChase>();
     }
+
     private void Start()
     {
         ResetState();
+        SetTarget();
+        
     }
+
     public void ResetState()
     {
-        this.gameObject.SetActive(true);
-        this.movement.ResetState();
-        this.frightened.Disable();
-        if (this.chase != null)
-        {
-            this.chase.Disable();
-        }
-        this.scatter.Enable();
+        gameObject.SetActive(true);
+        movement.ResetState();
+        frightened?.Disable();
+        scatter?.Enable();
 
-        if (this.home != this.initialBehavior)
+        if (chase != null)
         {
-            this.home.Disable();
+            chase.Disable();
         }
 
-        if (this.initialBehavior != null)
+        if (pinkyChase != null)
         {
-            this.initialBehavior.Enable();
+            pinkyChase.Disable();
+        }
+
+        if (inkyChase != null)
+        {
+            inkyChase.Disable();
+        }
+
+        if (home != initialBehavior)
+        {
+            home?.Disable();
+        }
+
+        if (initialBehavior != null)
+        {
+            initialBehavior.Enable();
         }
     }
+
+
+    private void SetTarget()
+    {
+        if (target != null)
+        {
+            pinkyChase?.SetTarget(target);
+            inkyChase?.SetTarget(target);
+        }
+    }
+
 
     public void SetPosition(Vector3 position)
     {
@@ -57,17 +85,18 @@ public class Ghost : MonoBehaviour
         position.z = transform.position.z;
         transform.position = position;
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Pacman"))
+        if (collision.gameObject.CompareTag("Pacman"))
         {
             if (frightened.enabled)
             {
-                FindObjectOfType<GameManager>().GhostEatten(this);
+                gameManager?.GhostEatten(this); // Use the reference to the GameManager to call the method
             }
             else
             {
-                FindObjectOfType<GameManager>().PacmanEatten();
+                gameManager?.PacmanEatten(); // Use the reference to the GameManager to call the method
             }
         }
     }

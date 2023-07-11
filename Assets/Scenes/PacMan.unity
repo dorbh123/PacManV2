@@ -5766,9 +5766,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3492074415758647802, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
+      propertyPath: blinky
+      value: 
+      objectReference: {fileID: 6679022470452118035}
+    - target: {fileID: 3492074415758647802, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1967524850}
+    - target: {fileID: 3492074415758647802, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1154915943}
+    - target: {fileID: 3690282815015035600, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
+      propertyPath: duration
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3690282815015035600, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -5781,6 +5793,34 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7299680570028161116, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
+      propertyPath: chaseBehavior1
+      value: 
+      objectReference: {fileID: 6679022470452118031}
+    - target: {fileID: 7299680570028161116, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
+      propertyPath: chaseBehavior2
+      value: 
+      objectReference: {fileID: 475757116}
+    - target: {fileID: 7299680570028161116, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
+      propertyPath: chaseBehavior3
+      value: 
+      objectReference: {fileID: 1883117746}
+    - target: {fileID: 7299680570028161116, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
+      propertyPath: chaseBehaviors.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7299680570028161116, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
+      propertyPath: chaseBehaviors.Array.data[0]
+      value: 
+      objectReference: {fileID: 6679022470452118031}
+    - target: {fileID: 7299680570028161116, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
+      propertyPath: chaseBehaviors.Array.data[1]
+      value: 
+      objectReference: {fileID: 1883117746}
+    - target: {fileID: 7299680570028161116, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
+      propertyPath: chaseBehaviors.Array.data[2]
+      value: 
+      objectReference: {fileID: 475757116}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
 --- !u!114 &475757106 stripped
@@ -5814,6 +5854,17 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6522408112308886007, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
   m_PrefabInstance: {fileID: 475757105}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &475757116 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2602575271228494680, guid: 01d2cc774c3b39e428516a11705e4e7a, type: 3}
+  m_PrefabInstance: {fileID: 475757105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d9c4cda6d935148b3c317b389a5b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -5906,9 +5957,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 137019285114929044, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
+      propertyPath: blinky
+      value: 
+      objectReference: {fileID: 6679022470452118035}
+    - target: {fileID: 137019285114929044, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1967524850}
+    - target: {fileID: 137019285114929044, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1154915943}
     - target: {fileID: 137019285114929070, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
       propertyPath: m_Name
       value: Ghost_Inky
@@ -5969,6 +6028,10 @@ PrefabInstance:
       propertyPath: duration
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3196273986600516834, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3369862222321685072, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
       propertyPath: blue
       value: 
@@ -5985,6 +6048,30 @@ PrefabInstance:
       propertyPath: white
       value: 
       objectReference: {fileID: 687159230}
+    - target: {fileID: 6115098501668431410, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
+      propertyPath: chaseBehavior1
+      value: 
+      objectReference: {fileID: 6679022470452118031}
+    - target: {fileID: 6115098501668431410, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
+      propertyPath: chaseBehavior2
+      value: 
+      objectReference: {fileID: 475757116}
+    - target: {fileID: 6115098501668431410, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
+      propertyPath: chaseBehavior3
+      value: 
+      objectReference: {fileID: 1883117746}
+    - target: {fileID: 6115098501668431410, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
+      propertyPath: chaseBehaviors.Array.data[0]
+      value: 
+      objectReference: {fileID: 6679022470452118031}
+    - target: {fileID: 6115098501668431410, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
+      propertyPath: chaseBehaviors.Array.data[1]
+      value: 
+      objectReference: {fileID: 1883117746}
+    - target: {fileID: 6115098501668431410, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
+      propertyPath: chaseBehaviors.Array.data[2]
+      value: 
+      objectReference: {fileID: 475757116}
     - target: {fileID: 7034019190670219649, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -8698,9 +8785,17 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4142826075676611136, guid: 1817030ba1e1111459e029f7df19ad50, type: 3}
+      propertyPath: blinky
+      value: 
+      objectReference: {fileID: 6679022470452118035}
+    - target: {fileID: 4142826075676611136, guid: 1817030ba1e1111459e029f7df19ad50, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1967524850}
+    - target: {fileID: 4142826075676611136, guid: 1817030ba1e1111459e029f7df19ad50, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1154915943}
     - target: {fileID: 4142826075676611194, guid: 1817030ba1e1111459e029f7df19ad50, type: 3}
       propertyPath: m_Name
       value: Ghost_Clyde
@@ -8757,6 +8852,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7801850552160177126, guid: 1817030ba1e1111459e029f7df19ad50, type: 3}
+      propertyPath: chaseBehaviors.Array.data[0]
+      value: 
+      objectReference: {fileID: 6679022470452118031}
+    - target: {fileID: 7801850552160177126, guid: 1817030ba1e1111459e029f7df19ad50, type: 3}
+      propertyPath: chaseBehaviors.Array.data[1]
+      value: 
+      objectReference: {fileID: 1883117746}
+    - target: {fileID: 7801850552160177126, guid: 1817030ba1e1111459e029f7df19ad50, type: 3}
+      propertyPath: chaseBehaviors.Array.data[2]
+      value: 
+      objectReference: {fileID: 475757116}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1817030ba1e1111459e029f7df19ad50, type: 3}
 --- !u!114 &1090051310 stripped
@@ -9873,6 +9980,17 @@ Transform:
   m_Father: {fileID: 1967524850}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1883117746 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1553364834499382582, guid: 688b856e42b0e3f489d618cb40b8cb23, type: 3}
+  m_PrefabInstance: {fileID: 687159228}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d9c4cda6d935148b3c317b389a5b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1967524847
 GameObject:
   m_ObjectHideFlags: 0
@@ -9890,7 +10008,7 @@ GameObject:
   - component: {fileID: 1967524854}
   m_Layer: 6
   m_Name: PacMan
-  m_TagString: Untagged
+  m_TagString: Pacman
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10088,6 +10206,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2740579742956990048, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
+      propertyPath: chaseBehavior1
+      value: 
+      objectReference: {fileID: 6679022470452118031}
+    - target: {fileID: 2740579742956990048, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
+      propertyPath: chaseBehavior2
+      value: 
+      objectReference: {fileID: 475757116}
+    - target: {fileID: 2740579742956990048, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
+      propertyPath: chaseBehavior3
+      value: 
+      objectReference: {fileID: 1883117746}
+    - target: {fileID: 2740579742956990048, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
+      propertyPath: chaseBehaviors.Array.data[0]
+      value: 
+      objectReference: {fileID: 6679022470452118031}
+    - target: {fileID: 2740579742956990048, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
+      propertyPath: chaseBehaviors.Array.data[1]
+      value: 
+      objectReference: {fileID: 1883117746}
+    - target: {fileID: 2740579742956990048, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
+      propertyPath: chaseBehaviors.Array.data[2]
+      value: 
+      objectReference: {fileID: 475757116}
     - target: {fileID: 6634198794987854338, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
       propertyPath: blue
       value: 
@@ -10116,10 +10258,26 @@ PrefabInstance:
       propertyPath: outside
       value: 
       objectReference: {fileID: 1535028018}
+    - target: {fileID: 7447799741276357988, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
+      propertyPath: duration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301124919103223750, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
+      propertyPath: blinky
+      value: 
+      objectReference: {fileID: 6679022470452118035}
     - target: {fileID: 8301124919103223750, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1967524850}
+    - target: {fileID: 8301124919103223750, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301124919103223750, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1154915943}
     - target: {fileID: 8301124919103223804, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
       propertyPath: m_Name
       value: Ghost_Blinky
@@ -10203,5 +10361,21 @@ SpriteRenderer:
 --- !u!212 &6679022470452118023 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1856025736691863499, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
+  m_PrefabInstance: {fileID: 6679022470452118018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6679022470452118031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7447799741276357988, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
+  m_PrefabInstance: {fileID: 6679022470452118018}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d9c4cda6d935148b3c317b389a5b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &6679022470452118035 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8301124919103223805, guid: a6f30c03b71783f4bac23939189e8243, type: 3}
   m_PrefabInstance: {fileID: 6679022470452118018}
   m_PrefabAsset: {fileID: 0}

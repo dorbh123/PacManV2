@@ -1,24 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PinkyChase : GhostBehavior
+public class GhostInkyChase : GhostBehavior
 {
+
     private void OnDisable()
     {
-        ghost.scatter.Enable();
+        if (ghost != null && ghost.scatter != null)
+        {
+            ghost.scatter.SetNextBehavior();
+            ghost.scatter.Enable();
+        }
+    }
+    public override void Enable(float duration)
+    {
+        this.enabled = true;
+        CancelInvoke();
+        Invoke(nameof(Disable), duration);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Node node = collision.GetComponent<Node>();
-        if (node != null && this.enabled && !this.ghost.frightened.enabled)
+        if (node != null && enabled && ghost != null && !ghost.frightened.enabled)
         {
             Vector2 direction = Vector2.zero;
             float minDistance = float.MaxValue;
 
-            // Calculate the target position for Pinky
-            Vector3 targetPosition = ghost.target.position + (ghost.target.up * 4); // Offset the target position by a certain distance
+            Vector3 targetPosition = CalculateTargetPosition();
 
             foreach (Vector2 availableDirection in node.availableDirections)
             {
@@ -34,5 +42,13 @@ public class PinkyChase : GhostBehavior
 
             ghost.movement.SetDirection(direction);
         }
+    }
+
+    private Vector3 CalculateTargetPosition()
+    {
+        Vector3 pacmanPosition = ghost.target.position;
+        Vector3 blinkyPosition = ghost.transform.position; // Use Blinky's position as the target position
+        Vector3 direction = pacmanPosition - blinkyPosition;
+        return pacmanPosition + (2 * direction);
     }
 }

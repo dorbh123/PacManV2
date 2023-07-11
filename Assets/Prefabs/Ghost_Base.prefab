@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialBehavior: {fileID: 0}
+  gameManager: {fileID: 0}
   target: {fileID: 0}
   points: 200
 --- !u!114 &1207562330850481000
@@ -140,6 +141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 7
+  chaseBehaviors:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &3136916890696879118
 MonoBehaviour:
   m_ObjectHideFlags: 0
