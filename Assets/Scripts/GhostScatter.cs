@@ -2,10 +2,7 @@ using UnityEngine;
 
 public class GhostScatter : GhostBehavior
 {
-    public GhostBehavior chaseBehavior1; // Reference to the first chase behavior for this specific ghost
-    public GhostBehavior chaseBehavior2; // Reference to the second chase behavior for this specific ghost
-    public GhostBehavior chaseBehavior3; // Reference to the third chase behavior for this specific ghost
-
+   
     public override void SetNextBehavior()
     {
         // Transition to the appropriate chase behavior based on the specific ghost
